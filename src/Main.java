@@ -5,8 +5,8 @@ public class Main {
 
         Scanner cin = new Scanner(System.in);
 
-        boolean pagar = false;
-        int escolha, escolhaL;
+        boolean pagar = true;
+        int escolha;
         
         Cliente cliente = new Cliente();
 
@@ -14,74 +14,98 @@ public class Main {
         Computador promo1 = new Computador();
         Computador promo2 = new Computador();
         Computador promo3 = new Computador();
-        HardwareBasico hard = new HardwareBasico();
-
+        HardwareBasico Pro1 = new HardwareBasico();
+        HardwareBasico Pro2 = new HardwareBasico();
+        HardwareBasico Pro3 = new HardwareBasico();
+        HardwareBasico Men1 = new HardwareBasico();
+        HardwareBasico Men2 = new HardwareBasico();
+        HardwareBasico Men3 = new HardwareBasico();
+        HardwareBasico Armaz1 = new HardwareBasico();
+        HardwareBasico Armaz2 = new HardwareBasico();
+        HardwareBasico Armaz3 = new HardwareBasico();
+        MemoriaUSB usb1 = new MemoriaUSB();
+        MemoriaUSB usb2 = new MemoriaUSB();
+        MemoriaUSB usb3 = new MemoriaUSB();
 
 
         promo1.marca = "Positivo";
         promo1.preco = 3300;
         //add Processador
-        hard.nome = "Pentium Core i3";
-        hard.unidade = " Mhz";
-        hard.capacidade = 2200;
-        promo1.addHardware(hard, 0);
+        Pro1.nome = "Pentium Core i3";
+        Pro1.unidade = " Mhz";
+        Pro1.capacidade = 2200;
+        promo1.addHardware(Pro1, 0);
         //add memoria
-        hard.nome = "Memória RAM";
-        hard.unidade = " Gb";
-        hard.capacidade = 8;
-        promo1.addHardware(hard, 1);
+        Men1.nome = "Memória RAM";
+        Men1.unidade = " Gb";
+        Men1.capacidade = 8;
+        promo1.addHardware(Men1, 1);
         //add armazenamento
-        hard.nome = "HDD";
-        hard.unidade = " Gb";
-        hard.capacidade = 500;
-        promo1.addHardware(hard, 2);
+        Armaz1.nome = "HDD";
+        Armaz1.unidade = " Gb";
+        Armaz1.capacidade = 500;
+        promo1.addHardware(Armaz1, 2);
         //add Sistema
         promo1.sistemaOperarional.nome = "Linux Ubunto";
         promo1.sistemaOperarional.tipo = 32;
+        //add USB
+        usb1.nome = "PenDrive";
+        usb1.capacidade = 16;
+        usb1.unidade = " Gb";
+        promo1.addMemoriaUSB(usb1);
 
 
         promo2.marca = "Acer";
         promo2.preco = 8800;
         //add Processador
-        hard.nome = "Pentium Core i5";
-        hard.unidade = " Mhz";
-        hard.capacidade = 3370;
-        promo2.addHardware(hard, 0);
+        Pro2.nome = "Pentium Core i5";
+        Pro2.unidade = " Mhz";
+        Pro2.capacidade = 3370;
+        promo2.addHardware(Pro2, 0);
         //add memoria
-        hard.nome = "Memória RAM";
-        hard.unidade = " Gb";
-        hard.capacidade = 16;
-        promo2.addHardware(hard, 1);
+        Men2.nome = "Memória RAM";
+        Men2.unidade = " Gb";
+        Men2.capacidade = 16;
+        promo2.addHardware(Men2, 1);
         //add armazenamento
-        hard.nome = "HDD";
-        hard.unidade = " Tb";
-        hard.capacidade = 1;
-        promo2.addHardware(hard, 2);
+        Armaz2.nome = "HDD";
+        Armaz2.unidade = " Tb";
+        Armaz2.capacidade = 1;
+        promo2.addHardware(Armaz2, 3);
         //add Sistema
         promo2.sistemaOperarional.nome = "Windows 8";
         promo2.sistemaOperarional.tipo = 64;
+        //add USB
+        usb2.nome = "PenDrive";
+        usb2.capacidade = 32;
+        usb2.unidade = " Gb";
+        promo2.addMemoriaUSB(usb2);
 
         promo3.marca = "Vaio";
         promo3.preco = 4800;
         //add Processador
-        hard.nome = "Pentium Core i7";
-        hard.unidade = " Mhz";
-        hard.capacidade = 4500;
-        promo3.addHardware(hard, 0);
+        Pro3.nome = "Pentium Core i7";
+        Pro3.unidade = " Mhz";
+        Pro3.capacidade = 4500;
+        promo3.addHardware(Pro3, 0);
         //add memoria
-        hard.nome = "Memória RAM";
-        hard.unidade = " Gb";
-        hard.capacidade = 32;
-        promo3.addHardware(hard, 1);
+        Men3.nome = "Memória RAM";
+        Men3.unidade = " Gb";
+        Men3.capacidade = 32;
+        promo3.addHardware(Men3, 1);
         //add armazenamento
-        hard.nome = "HDD";
-        hard.unidade = " Tb";
-        hard.capacidade = 2;
-        promo3.addHardware(hard, 2);
+        Armaz3.nome = "HDD";
+        Armaz3.unidade = " Tb";
+        Armaz3.capacidade = 2;
+        promo3.addHardware(Armaz3, 2);
         //add Sistema
         promo3.sistemaOperarional.nome = "Windows 10";
         promo3.sistemaOperarional.tipo = 64;
-
+        //add USB
+        usb3.nome = "HDD Externo";
+        usb3.capacidade = 1;
+        usb3.unidade = " Tb";
+        promo3.addMemoriaUSB(usb3);
 
         //Loja
         System.out.println("Bem vindo a PCMania \nPara continuarmos insira seu Nome:");
@@ -98,10 +122,10 @@ public class Main {
         promo2.mostraPCConfig();
 
         System.out.println("\nPromoção 3:");
-        promo2.mostraPCConfig();
+        promo3.mostraPCConfig();
 
         //Carrinho
-        System.out.println("Favor escolher a promoção desejada (1 - 2 - 3), Caso deseje seguir para o pagamento digite 0.");
+        System.out.println("\n\nFavor escolher a promoção desejada (1 - 2 - 3), Caso deseje seguir para o pagamento digite 0.");
         int j = 0, limite = 0;
         while (pagar)
         {
@@ -109,42 +133,36 @@ public class Main {
 
             if(limite == 10)
             {
-                System.out.println("Limite do carrinho atingido, favor selecionar uma promoção pra substituição (1 ao 10), ou prosseguir para o pagamento (0)");
-                escolhaL = cin.nextInt();
-                if(escolhaL == 0)
+                System.out.println("Limite do carrinho atingido seuindo para o pagamento");
                     escolha = 0;
-                 else {
-                     j = escolhaL - 1;
-                    limite--;
-                }
             }
 
             switch (escolha){
                 case 1:
-                    cliente.computador[j] = promo1;
+                    cliente.computadores[j] = promo1;
                     j++;
                     limite ++;
                     break;
 
                 case 2:
-                    cliente.computador[j] = promo1;
+                    cliente.computadores[j] = promo2;
                     j++;
                     limite ++;
                     break;
 
                 case 3:
-                    cliente.computador[j] = promo1;
+                    cliente.computadores[j] = promo3;
                     j++;
                     limite ++;
                     break;
 
                 default:
                     if (escolha == 0){
-                        if (cliente.computador[0] == null){
+                        if (cliente.computadores[0] == null){
                             System.out.println("Escolha ao menos uma promoção!");
                         }else{
                         System.out.println("Compra finalizada, seguindo para o pagamento.");
-                        pagar = true;
+                        pagar = false;
                         }
                     }else{
                         System.out.println("Valor inserido Invalido, tente novamente!");
@@ -153,11 +171,13 @@ public class Main {
             }
         }
 
-        System.out.println("Carrinho final:\n    Cliente: " + cliente.nome + "\n    CPF: " + cliente.cpf);
+        System.out.println("\n\nCarrinho final:\n    Cliente: " + cliente.nome + "\n    CPF: " + cliente.cpf);
+        int k;
         for (int i = 0; i < limite; i++)
         {
-            System.out.println("\nComputador " + i);
-            cliente.computador[i].mostraPCConfig();
+            k = i + 1;
+            System.out.println("\nComputador " + k);
+            cliente.computadores[i].mostraPCConfig();
         }
 
         System.out.println("\n Totalizando em R$" + cliente.calculaTotalCompra());
